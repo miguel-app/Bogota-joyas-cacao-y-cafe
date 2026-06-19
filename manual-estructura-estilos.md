@@ -104,7 +104,7 @@ El orden de las secciones en la página es estricto y responde a un embudo de co
     <header class="header">
         <div class="container header-container">
             <a href="https://threadstravel.com/" class="logo-link" title="Inicio Threads Travel">
-                <img src="https://threadstravel.com/wp-content/uploads/2026/05/cropped-Principal-fondo-oscuro-copia.png" alt="Threads Travel Logo" class="logo-img">
+                <img src="https://threadstravel.com/wp-content/uploads/2026/05/cropped-cropped-Principal-fondo-oscuro-copia.png" alt="Threads Travel Logo" class="logo-img">
             </a>
             <nav class="nav">
                 <a href="#experiencia" class="nav-link">La Experiencia</a>
@@ -377,7 +377,7 @@ El orden de las secciones en la página es estricto y responde a un embudo de co
         <div class="container footer-container">
             <div class="footer-brand">
                 <a href="https://threadstravel.com/" class="logo-link" title="Inicio Threads Travel">
-                    <img src="https://threadstravel.com/wp-content/uploads/2026/05/cropped-Principal-fondo-oscuro-copia.png" alt="Threads Travel Logo" class="logo-img-footer">
+                    <img src="https://threadstravel.com/wp-content/uploads/2026/05/cropped-cropped-Principal-fondo-oscuro-copia.png" alt="Threads Travel Logo" class="logo-img-footer">
                 </a>
                 <p>Tejiendo experiencias memorables, libres de estrés.</p>
             </div>
