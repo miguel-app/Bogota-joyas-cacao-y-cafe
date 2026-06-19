@@ -44,14 +44,6 @@
       "brand": {
         "@type": "Brand",
         "name": "Threads Travel"
-      },
-      "offers": {
-        "@type": "Offer",
-        "url": "https://threadstravel.com/paquetes/la-ruta-de-la-sal-zipaquira-2026",
-        "priceCurrency": "USD",
-        "price": "320.00",
-        "availability": "https://schema.org/InStock",
-        "validFrom": "2026-05-26"
       }
     }
     </script>
@@ -221,35 +213,41 @@
                             <i class="fa-solid fa-circle-exclamation"></i> CUPOS ESTRICTAMENTE LIMITADOS
                         </div>
                         <div class="booking-header">
-                            <span class="price-label">Inversión por persona</span>
-                            <span class="price-value">$320 <span class="currency">USD</span></span>
+                            <span class="price-label">Experiencia Privada de Lujo</span>
+                            <span class="price-value" style="font-size: 1.85rem; line-height: 1.2;">Bajo Consulta</span>
                         </div>
                         
                         <div class="booking-body">
                             <p class="booking-warning-text">
-                                Operamos bajo un modelo exclusivo de grupos reducidos (máximo 6 invitados por salida) para garantizar la intimidad, comodidad y personalización de la experiencia culinaria y de transporte.
+                                Operamos bajo un modelo exclusivo de grupos reducidos (máximo 6 invitados por salida) para garantizar la intimidad, comodidad y personalización de la experiencia.
                             </p>
                             
-                            <div class="booking-meta-info">
-                                <div class="meta-item">
-                                    <i class="fa-regular fa-calendar-check"></i>
-                                    <span>Salidas garantizadas todo el año (Requiere 48h de anticipación).</span>
+                            <!-- Formulario de Reserva Integrado -->
+                            <form id="booking-form" class="booking-form" action="#" method="POST">
+                                <div class="form-group">
+                                    <label for="booking-name" class="form-label">Nombre Completo</label>
+                                    <input type="text" id="booking-name" name="name" class="form-control" placeholder="Ej. Juan Pérez" required>
                                 </div>
-                                <div class="meta-item">
-                                    <i class="fa-solid fa-route"></i>
-                                    <span>Ruta: Hotel ➔ Zipaquirá (Catedral) ➔ Cata Destilados ➔ Retorno Hotel.</span>
+                                <div class="form-group">
+                                    <label for="booking-date" class="form-label">Fecha Estimada del Tour</label>
+                                    <input type="date" id="booking-date" name="tour_date" class="form-control" required>
                                 </div>
-                            </div>
-                            
-                            <!-- CTA Final Button -->
-                            <div class="booking-action">
-                                <a href="https://wa.me/573224410183?text=Hola,%20deseo%20reservar%20la%20experiencia%20La%20Ruta%20de%20la%20Sal" class="btn btn-primary btn-block btn-pulse" target="_blank">
+                                <div class="form-group">
+                                    <label for="booking-phone" class="form-label">Teléfono Móvil (WhatsApp)</label>
+                                    <input type="tel" id="booking-phone" name="phone" class="form-control" placeholder="Ej. +57 300 123 4567" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="booking-email" class="form-label">Correo Electrónico</label>
+                                    <input type="email" id="booking-email" name="email" class="form-control" placeholder="Ej. juan@correo.com" required>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary btn-block btn-pulse">
                                     <i class="fa-brands fa-whatsapp"></i> DISEÑAR MI RUTA VIP
-                                </a>
-                            </div>
+                                </button>
+                            </form>
                             
-                            <p class="booking-footer-note">
-                                Haga clic para iniciar un chat directo en WhatsApp con nuestro equipo de Concierges. Personalizaremos sus horarios de recogida y adaptaremos el menú a sus preferencias o restricciones alimenticias sin costo adicional.
+                            <p class="booking-footer-note" style="margin-top: 16px;">
+                                Al enviar sus datos, nuestro equipo de Concierges de Viajes se comunicará directamente con usted en menos de 15 minutos para validar disponibilidad y personalizar su itinerario.
                             </p>
                         </div>
                     </div>
@@ -328,7 +326,7 @@
         </div>
     </footer>
 
-    <!-- Interactive JS for Accordion -->
+    <!-- Interactive JS for Accordion and Form Submit -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const accordionHeaders = document.querySelectorAll('.accordion-header');
@@ -359,6 +357,24 @@
                     }
                 });
             });
+
+            // Form Submit Logic to WhatsApp
+            const bookingForm = document.getElementById('booking-form');
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('booking-name').value;
+                    const date = document.getElementById('booking-date').value;
+                    const phone = document.getElementById('booking-phone').value;
+                    const email = document.getElementById('booking-email').value;
+                    
+                    const text = `Hola Concierge Threads Travel. Deseo cotizar la experiencia privada "La Ruta de la Sal en Zipaquirá".\n\nMis datos de contacto:\n- Nombre: ${name}\n- Fecha estimada: ${date}\n- Teléfono: ${phone}\n- Correo: ${email}`;
+                    
+                    const url = `https://wa.me/573224410183?text=${encodeURIComponent(text)}`;
+                    window.open(url, '_blank');
+                });
+            }
         });
     </script>
 </body>
